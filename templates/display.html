@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            font-size: x-large;
+        }
+        table caption{
+            margin-bottom: 20px;
+            color: red;
+            font-size: xx-large;
+        }
+        table th{
+            color: blue;
+        }
+        table tr{
+            color: rgb(251, 97, 8);
+        }
+        table{
+            width: 80%;
+        }
+        table,tr,td,th{
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+        }
+        
+        .add{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .add a{
+            margin-top: 20px;
+            padding: 20px;
+            color: aqua;
+            font-weight: bolder;
+            background-color: black;
+            font-size: x-large;
+            text-decoration: none;
+        }
+        table tr td a{
+            background-color: black;
+            color: white;
+            font-size: large;
+            padding: 10px;
+            margin: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        table tr td #del{
+            background-color: red;
+            color: white;
+            font-size: large;
+            padding: 10px;
+            margin: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        table td{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="add">
+        <a href="/addpage">ADD DATA</a>
+    </div>
+
+    <div class="con">
+        <table>
+            <caption>Student data</caption>
+         </tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>MARK</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+             </tr>
+        {% for i in data %}
+        <tr>
+         <td> {{ i.id }}  </td>
+         <td> {{ i.name }}  </td>
+         <td> {{ i.age }}  </td>
+         <td> {{ i.mark }}  </td>
+         <td> <a href="/update/{{i.id}}">UPDATE</a> </td>
+         <td> <a id="del" href="/delete/{{i.id}}">DELETE</a> </td>
+         </tr>
+         {% endfor %}
+
+        </table>
+    </div>
+</body>
+</html>

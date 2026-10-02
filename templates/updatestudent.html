@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        legend{
+            text-align: center;
+            color: red;
+            font-size: xx-large;
+        }
+        form fieldset{
+            border-radius: 20px;
+            border: 2px solid black;
+            padding: 30px;
+            margin-top: 18%;
+            
+        }
+        form{
+            width: 40%;
+        }
+        label{
+            display: block;
+            font-size: larger;
+            margin-top: 25px;
+            margin-bottom: 7px;
+            color: blue;
+        }
+        input{
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 90%;
+            height: 25px;
+            font-size: x-large;
+            padding: 10px;
+        }
+        input::placeholder{
+            text-align: center;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+        }
+        .btn button{
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 20px;
+            font-size: larger;
+            font-weight: bolder;
+            width: 50%;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <form action="/updatedata/{{datas.id}}" method="post">
+            <fieldset>
+                <legend>UPDATE STUDENT</legend>
+
+                <label for="">NAME</label>
+                <input type="text" required value="{{datas.name}}"  name="name" id="">
+
+                <label for="">AGE</label>
+                <input type="text" required value="{{datas.age}}"  name="age" id="">
+
+                <label for="">MARK</label>
+                <input type="text" required value=" {{datas.mark }}" name="mark" id="">
+                <div class="btn">
+                    <button type="submit">UPDATE STUDENT</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
